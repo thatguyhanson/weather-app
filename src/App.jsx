@@ -1,18 +1,25 @@
+// React
 import { useState } from 'react'
+
+// Components
 import City from './components/City'
 import Nav from './components/Nav'
 import News from './components/News'
 import Wrapper from './components/Wrapper'
+
+// Assets
 import hotCat from './assets/cat-on-fire.jpg'
 import coldCat from './assets/cold-cat.jpeg'
+
+// Styles
 import './App.css'
 
 function App() {
 
   const cities = [
-    {id: 0, location: "West Lafayette, IN", temp: "17º" },
-    {id: 1, location: "Michigan City, IN", temp: "19º"},
-    {id: 2, location: "Lexington, VA", temp: "17º"}
+    {id: 0, location: "West Lafayette", state: "IN", temp: "17º" },
+    {id: 1, location: "Michigan City", state: "IN", temp: "19º"},
+    {id: 2, location: "Lexington", state: "VA", temp: "17º"}
   ]
 
   const news = [
@@ -29,15 +36,29 @@ function App() {
     }
   ]
 
+  const [cityName, setCityName] = useState("");
+
+  const handleSearch = (event) => {
+    setCityName(event.target.value);
+  }
+
+  const filteredCities = cities.filter(cities => cities.location.toLowerCase().includes(cityName.toLowerCase()) || !cityName)
+
+  const [styles, setStyles] = useState("dark-mode");
+
+  const toggleStyles = () => {
+    setStyles(styles === "dark-mode" ? "light-mode" : "dark-mode");
+  }
+
   return (
-    <div>
+    <div className={styles}>
         <Wrapper id="nav">
-          <Nav />
+          <Nav cityName={cityName} handleSearch={handleSearch} toggleStyles={toggleStyles} currentStyle={styles}/>
         </Wrapper>
         <Wrapper id="cities">
           <h1>Weather</h1>
-          {cities.map(cities => (
-            <City key={cities.id} location={cities.location} temp={cities.temp} />
+          {filteredCities.map(cities => (
+            <City key={cities.id} location={cities.location} state={cities.state} temp={cities.temp} />
           ))}
           <h1>News</h1>
           {news.map(news => (

@@ -1,6 +1,7 @@
 import styles from './nav.module.css';
 
-export default function Nav() {
+
+export default function Nav({ cityName, handleSearch, toggleStyles, currentStyle }) {
     return (
         <header className={styles.header}>
             <nav className={styles.links}>
@@ -10,9 +11,11 @@ export default function Nav() {
                 <a href="#Radar">Radar</a>
             </nav>
             <nav>
-                <input className={styles.search} type="text" placeholder="Search City or Zip Code" />
+                <input className={styles.search} id="search" type="text" value={cityName} onChange={handleSearch} placeholder="Search City" />
             </nav>
-            <button>Toggle Style</button>
+            <button onClick={toggleStyles} className={styles.darkModeToggle}>
+                    {currentStyle === "dark-mode" ? "Light Mode" : "Dark Mode"}
+                </button>
         </header>
     );
 }
