@@ -1,6 +1,6 @@
 # Weather Channel Lite rebuild
 This project is a React-based lite rebuild version of The Weather Channel's website.
-Original Website: https://weather.com
+Original Website: [The Weather Channel]https://weather.com
 
 ## How to run Locally
 Clone this repository:
@@ -20,6 +20,7 @@ Run development server
 - Added functional "Dark/Light Mode" button.
 
 **Reasoning**
+</br>
 I chose these features to improve user accessibility and data discoverability. The theme toggle allows users to customize their viewing experience based on environment or preference, while the search function ensures the UI remains functional as the list of cities grows.
 
 **What's next?**
