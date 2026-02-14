@@ -11,3 +11,22 @@ Install dependencies
 
 Run development server
 ```npm run dev```
+
+# Latest Update
+## Update 1.0.2v (February 14, 2026)
+
+**New Features**
+- Added search function that filters by City.
+- Added functional "Dark/Light Mode" button.
+
+**Reasoning**
+I chose these features to improve user accessibility and data discoverability. The theme toggle allows users to customize their viewing experience based on environment or preference, while the search function ensures the UI remains functional as the list of cities grows.
+
+**What's next?**
+- Making the dark/light mode toggle persistant when reloading the page.
+- Improving CSS of city card components
+- Connecting city cards to a live API to replace current static placeholder data.
+
+# Previous Updates
+## Update 1.0.1v
+- Initial commit.
