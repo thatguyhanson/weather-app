@@ -4,6 +4,9 @@ Original Website: [The Weather Channel](https://weather.com)
 
 This project also makes use of the open-source weather API from [Open-Mateo](https://open-meteo.com) for non-commercial use, and the Gelocation API of [ipapi.co](https://ipapi.co) based on IP Address
 
+## You may access the website here:
+[WeatherDux](https://thatguyhanson.github.io/weather-app/)
+
 ## How to run Locally
 Clone this repository:
 ``` git clone https://github.com/thatguyhanson/weather-app ```
