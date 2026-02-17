@@ -12,7 +12,22 @@ Install dependencies
 Run development server
 ```npm run dev```
 
+# TODO
+- [] Multiple Search Results for Location
+- [] Cº/Fº Toggle
+- [] Ability to access each city card for detailed data
+
 # Latest Update
+
+## Update 1.0.3v (February 16, 2026)
+**New Features**
+- Added API implementation from Open-Mateo
+- Users will now be able to search a city name
+
+**Roadmap**
+- Add a dropdown list when users search for a location that has the same name as another location
+
+# Previous Updates
 ## Update 1.0.2v (February 14, 2026)
 
 **New Features**
@@ -28,6 +43,5 @@ I chose these features to improve user accessibility and data discoverability. T
 - Improving CSS of city card components
 - Connecting city cards to a live API to replace current static placeholder data.
 
-# Previous Updates
 ## Update 1.0.1v
 - Initial commit.
