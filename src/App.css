@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+
+.dark-mode {
+    --bg-color: #242424;
+    --text-color: #ffffff;
+    background-color: #242424;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #213547;
+    background-color: #ffffff;
+    color: #213547;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
