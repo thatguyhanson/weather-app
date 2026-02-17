@@ -13,3 +13,15 @@
     margin: 0 50px;
     font-size: 2em;
 }
+
+.location {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.temp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
