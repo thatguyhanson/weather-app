@@ -1,4 +1,4 @@
-# Weather Channel Lite rebuild
+# Weather Channel Lite rebuild, WeatherDux
 This project is a React-based lite rebuild version of The Weather Channel's website.
 Original Website: [The Weather Channel](https://weather.com)
 
@@ -15,7 +15,6 @@ Run development server
 ```npm run dev```
 
 # TODO
-- [] Multiple Search Results for Location
 - [] Cº/Fº Toggle
 - [] Ability to access each city card for detailed data
 
@@ -25,16 +24,18 @@ Run development server
 **New Features**
 - Added API implementation from Open-Mateo
 - Users will now be able to search a city name
+- Added dropdown suggestions for search input
 
 **Roadmap**
-- Add a dropdown list when users search for a location that has the same name as another location
+- Fix broken Dark/Light mode button
+- Improve CSS of city components
 
 # Previous Updates
 ## Update 1.0.2v (February 14, 2026)
 
 **New Features**
 - Added search function that filters by City.
-- Added functional "Dark/Light Mode" button.
+- Added functional "Dark/Light Mode" button. (Broken, will fix in feature update)
 
 **Reasoning**
 </br>
