@@ -1,16 +1,23 @@
+// Imports
 import { useState } from 'react'
+
+// Components
 import City from './components/City'
 import Nav from './components/Nav'
 import News from './components/News'
 import Wrapper from './components/Wrapper'
+
+// Assets
 import hotCat from './assets/cat-on-fire.jpg'
 import coldCat from './assets/cold-cat.jpeg'
+
+// Styles
 import './App.css'
 
 function App() {
 
   const [cities, setCities] = useState([
-    { id: 0, location: "West Lafayette, IN", temp: "17º" }
+    { id: 0, location: "West Lafayette, IN", temp: "17º" } // Placeholder city
   ]);
 
   const news = [
@@ -29,18 +36,24 @@ function App() {
     }
   ]
 
-  // Inside App.jsx
+  // Extracts data from the selected city and adds it to the cities state in App.jsx
   const addCityBySelection = async (cityData) => {
+
+    // Destructure necessary data from the selected city
     const { latitude, longitude, name, admin1, country_code } = cityData;
 
     try {
+      // Fetch current weather data for the selected city
       const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m&temperature_unit=fahrenheit`;
       const response = await fetch(weatherUrl);
       const data = await response.json();
 
+      // Create a new city object with the location and temperature
       const newCity = {
         id: Date.now(),
-        location: `${name}, ${admin1 || country_code}`,
+        location: admin1
+          ? `${name}, ${admin1}, ${country_code}`
+          : `${name}, ${country_code}`,
         temp: `${Math.round(data.current.temperature_2m)}º`
       };
 
