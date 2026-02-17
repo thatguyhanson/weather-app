@@ -2,6 +2,8 @@
 This project is a React-based lite rebuild version of The Weather Channel's website.
 Original Website: [The Weather Channel](https://weather.com)
 
+This project also makes use of the open-source weather API from [Open-Mateo](https://open-meteo.com) for non-commercial use.
+
 ## How to run Locally
 Clone this repository:
 ``` git clone https://github.com/thatguyhanson/weather-app ```
