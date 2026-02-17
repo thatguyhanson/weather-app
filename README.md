@@ -15,11 +15,12 @@ Run development server
 ```npm run dev```
 
 # TODO
-- [] Cº/Fº Toggle
-- [] Ability to access each city card for detailed data
+- [ ] Cº/Fº Toggle
+- [ ] Ability to access each city card for detailed data
 
 # Latest Update
 ## Update 1.0.4v (February 17, 2026)
+**New Features**
 - Added geolocation API using ipapi.co so the user knows their temperature when opening the website
 
 ## Update 1.0.3v (February 16, 2026)
