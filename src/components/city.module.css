@@ -7,10 +7,11 @@
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
+    gap: 20px;
 }
 
 .city p {
-    margin: 0 50px;
+    margin: 0;
     font-size: 2em;
 }
 
@@ -18,10 +19,45 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex: 1;
 }
 
 .temp {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .city {
+        flex-direction: column;
+        padding: 15px;
+        margin: 8px;
+    }
+    
+    .city p {
+        font-size: 1.5em;
+    }
+    
+    .location {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .temp {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .city {
+        padding: 12px;
+        margin: 6px;
+    }
+    
+    .city p {
+        font-size: 1.2em;
+    }
 }

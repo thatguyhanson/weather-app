@@ -77,7 +77,7 @@ function App() {
         <Nav onSelectCity={addCityBySelection} />
       </Wrapper>
       <Wrapper id="cities">
-        <h1>Weather</h1>
+        <h1>WeatherDux</h1>
         {cities.map(cities => (
           <City key={cities.id} location={cities.location} temp={cities.temp} />
         ))}
