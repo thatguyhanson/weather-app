@@ -12,7 +12,7 @@ export default function Nav({ onSelectCity }) {
             return;
         }
 
-        // Debounce: Wait 300ms after the user stops typing before calling the API
+        // Debounce: Wait 100ms after the user stops typing before calling the API
         const delayDebounceFn = setTimeout(async () => {
             try {
                 const url = `https://geocoding-api.open-meteo.com/v1/search?name=${searchTerm}&count=10&language=en&format=json`;
@@ -22,7 +22,7 @@ export default function Nav({ onSelectCity }) {
             } catch (error) {
                 console.error("Geocoding error:", error);
             }
-        }, 300);
+        }, 100);
 
         return () => clearTimeout(delayDebounceFn);
     }, [searchTerm]);
