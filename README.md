@@ -1,4 +1,4 @@
-# Weather Channel Lite rebuild
+# Weather Channel Lite rebuild, WeatherDux
 This project is a React-based lite rebuild version of The Weather Channel's website.
 Original Website: [The Weather Channel](https://weather.com)
 
