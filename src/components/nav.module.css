@@ -19,3 +19,37 @@
     width: 400px;
     height: 32px;
 }
+
+.searchContainer {
+    position: relative; /* So the dropdown stays attached to the input */
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    color: black; /* Ensure text is visible */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown li:last-child {
+    border-bottom: none;
+}
