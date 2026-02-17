@@ -9,11 +9,9 @@ import './App.css'
 
 function App() {
 
-  const cities = [
-    {id: 0, location: "West Lafayette, IN", temp: "17º" },
-    {id: 1, location: "Michigan City, IN", temp: "19º"},
-    {id: 2, location: "Lexington, VA", temp: "17º"}
-  ]
+  const [cities, setCities] = useState([
+    {id: 0, location: "West Lafayette, IN", temp: "17º" }
+  ]);
 
   const news = [
     {id: 0,
@@ -29,10 +27,38 @@ function App() {
     }
   ]
 
+  const getWeather = async (cityName) => {
+    try {
+      const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${cityName}&count=1&language=en&format=json`);
+      const geoData = await geoRes.json();
+
+      if (!geoData.results || geoData.results.length === 0) {
+        alert("Location not found. Please try again.");
+        return;
+      }
+
+      const { latitude, longitude, name, admin1, country_code } = geoData.results[0];
+
+      const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m&temperature_unit=fahrenheit`);
+      const weatherData = await weatherRes.json();
+
+      const newCity = {
+        id: Date.now(),
+        location: `${name}, ${admin1 || country_code}`,
+        temp: `${Math.round(weatherData.current.temperature_2m)}º`
+      };
+
+      setCities([newCity, ...cities]);
+    
+    } catch (error) {
+      console.error("Error fetching weather data:", error);
+    }
+  }
+
   return (
     <div>
         <Wrapper id="nav">
-          <Nav />
+          <Nav onSearch={getWeather}/>
         </Wrapper>
         <Wrapper id="cities">
           <h1>Weather</h1>
