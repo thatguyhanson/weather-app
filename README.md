@@ -2,7 +2,7 @@
 This project is a React-based lite rebuild version of The Weather Channel's website.
 Original Website: [The Weather Channel](https://weather.com)
 
-This project also makes use of the open-source weather API from [Open-Mateo](https://open-meteo.com) for non-commercial use, and the Gelocation API of ipapi.co based on IP Address
+This project also makes use of the open-source weather API from [Open-Mateo](https://open-meteo.com) for non-commercial use, and the Gelocation API of [ipapi.co](https://ipapi.co) based on IP Address
 
 ## How to run Locally
 Clone this repository:
