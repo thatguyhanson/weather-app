@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 // Components
 import City from './components/City'
 import Nav from './components/Nav'
-import News from './components/News'
 import Wrapper from './components/Wrapper'
 
 // Styles
