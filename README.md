@@ -26,6 +26,9 @@ Run development server
 **New Features**
 - Added geolocation API using ipapi.co so the user knows their temperature when opening the website
 
+**Changes**
+- Made UI more mobile friendly
+
 ## Update 1.0.3v (February 16, 2026)
 **New Features**
 - Added API implementation from Open-Mateo
