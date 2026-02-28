@@ -12,6 +12,16 @@ nav {
     gap: 1rem;
 }
 
+[data-theme="light"] .header {
+    background-color: #e8e8e8;
+    color: #213547;
+}
+
+[data-theme="dark"] .header {
+    background-color: #4d4d4d;
+    color: rgba(255, 255, 255, 0.87);
+}
+
 .links {
     display: flex;
     gap: 40px;
@@ -21,6 +31,14 @@ nav {
     color: #ffffff;
     text-decoration: none;
     font-size: 1em;
+}
+
+[data-theme="light"] .links a {
+    color: #213547;
+}
+
+[data-theme="dark"] .links a {
+    color: #ffffff;
 }
 
 .search {

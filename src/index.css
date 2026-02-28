@@ -13,6 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+[data-theme="light"] {
+  color-scheme: light;
+  color: #213547;
+  background-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
 /* Forecast list on home page */
 .forecast-list {
   list-style: none;
@@ -52,16 +64,32 @@ tr:nth-child(even) {
   background-color: rgba(255,255,255,0.05);
 }
 
-@media (prefers-color-scheme: light) {
-  .forecast-item {
-    background: rgba(0,0,0,0.05);
-  }
-  thead {
-    background-color: rgba(0,0,0,0.05);
-  }
-  tr:nth-child(even) {
-    background-color: rgba(0,0,0,0.02);
-  }
+[data-theme="light"] .forecast-item {
+  background: rgba(0,0,0,0.05);
+}
+
+[data-theme="light"] thead {
+  background-color: rgba(0,0,0,0.05);
+}
+
+[data-theme="light"] tr:nth-child(even) {
+  background-color: rgba(0,0,0,0.02);
+}
+
+[data-theme="dark"] .forecast-item {
+  background: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] thead {
+  background-color: rgba(255,255,255,0.15);
+}
+
+[data-theme="dark"] th, [data-theme="dark"] td {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.05);
 }
 
 a {
@@ -105,15 +133,20 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+[data-theme="light"] a {
+  color: #646cff;
+}
+
+[data-theme="light"] a:hover {
+  color: #747bff;
+}
+
+[data-theme="light"] button {
+  background-color: #f9f9f9;
+  color: #213547;
+}
+
+[data-theme="dark"] button {
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
 }
