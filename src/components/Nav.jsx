@@ -1,18 +1,18 @@
 import styles from './nav.module.css';
 import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Nav({ onSelectCity }) {
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState("");
     const [suggestions, setSuggestions] = useState([]);
 
     useEffect(() => {
-        // Only search if the user has typed at least 2 characters
         if (searchTerm.length < 2) {
             setSuggestions([]);
             return;
         }
 
-        // Debounce: Wait 100ms after the user stops typing before calling the API
         const delayDebounceFn = setTimeout(async () => {
             try {
                 const url = `https://geocoding-api.open-meteo.com/v1/search?name=${searchTerm}&count=10&language=en&format=json`;
@@ -28,33 +28,32 @@ export default function Nav({ onSelectCity }) {
     }, [searchTerm]);
 
     const handleSelect = (city) => {
-        onSelectCity(city); // Pass the whole city object to App.jsx
-        setSearchTerm("");  // Clear input
-        setSuggestions([]); // Close dropdown
+        onSelectCity(city);
+        setSearchTerm("");
+        setSuggestions([]);
+        navigate('/');
     };
 
     return (
         <header className={styles.header}>
             <nav className={styles.links}>
-                <a href="#Home">Home</a>
-                <a href="#Today">Today</a>
-                <a href="#Forecast">Forecast</a>
-                <a href="#Radar">Radar</a>
+                <Link to="/">Home</Link>
+                <Link to="/today">Today</Link>
+                <Link to="/forecast">Forecast</Link>
             </nav>
             <nav className={styles.searchContainer}>
-                <input 
-                    className={styles.search} 
-                    type="text" 
-                    placeholder="Search City..." 
+                <input
+                    className={styles.search}
+                    type="text"
+                    placeholder="Search City..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
-                
                 {suggestions.length > 0 && (
                     <ul className={styles.dropdown}>
                         {suggestions.map((city) => (
                             <li key={city.id} onClick={() => handleSelect(city)}>
-                                {city.name}, {city.admin1 ? `${city.admin1}, ` : ''} {city.country_code}
+                                {city.name}, {city.admin1 ? `${city.admin1}, ` : ''}{city.country_code}
                             </li>
                         ))}
                     </ul>

@@ -13,6 +13,57 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Forecast list on home page */
+.forecast-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.forecast-item {
+  background: rgba(255,255,255,0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Tables for Today and Forecast pages */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+thead {
+  background-color: rgba(255,255,255,0.15);
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.05);
+}
+
+@media (prefers-color-scheme: light) {
+  .forecast-item {
+    background: rgba(0,0,0,0.05);
+  }
+  thead {
+    background-color: rgba(0,0,0,0.05);
+  }
+  tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.02);
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
