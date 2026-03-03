@@ -28,6 +28,7 @@ export default function Home({ currentLocation, weatherData }) {
 
     return (
         <Wrapper>
+            <h1>WeatherDux</h1>
             <City
                 location={currentLocation.location}
                 temp={`${Math.round(weatherData.current_weather.temperature)}º`}
