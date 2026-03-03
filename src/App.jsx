@@ -1,3 +1,11 @@
+// App.jsx
+// Root component of the weather application. It is responsible
+// for maintaining global state (current location and fetched
+// weather data) and routing between pages. On mount it attempts
+// to determine the user's location via IP and load initial
+// weather. `Nav` is provided a callback to change the location
+// when the user picks a different city.
+
 import { useState, useEffect } from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 

@@ -1,3 +1,9 @@
+// Today.jsx
+// Renders a detailed hourly table for the current day. It
+// shows time, temperature, humidity, and optionally PM2.5 levels
+// pulled from the `weatherData` prop. If the data isn't ready a
+// loading placeholder is shown. The table covers the next 12 hours.
+
 import Wrapper from '../components/Wrapper';
 
 export default function Today({ weatherData }) {

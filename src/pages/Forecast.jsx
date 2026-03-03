@@ -1,3 +1,10 @@
+// Forecast.jsx
+// Displays a simple 7‑day forecast table using the `daily`
+// property from `weatherData`. Each row shows the date along
+// with high and low temperatures. A loading message is shown if
+// data isn't available, and a fallback message if the `daily`
+// object is missing.
+
 import Wrapper from '../components/Wrapper';
 
 export default function Forecast({ weatherData }) {

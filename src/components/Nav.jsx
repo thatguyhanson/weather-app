@@ -1,3 +1,10 @@
+// Nav.jsx
+// This component renders the top navigation bar used across the
+// application. It includes route links, a theme toggle, and a
+// searchable city input that fetches autocomplete suggestions.
+// When a user selects a city from the dropdown it calls `onSelectCity`
+// passed via props and navigates back to home. Theme preference is
+// stored in localStorage and applied to the document element.
 import styles from './nav.module.css';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';

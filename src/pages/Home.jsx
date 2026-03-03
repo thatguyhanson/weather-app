@@ -1,3 +1,9 @@
+// Home.jsx
+// This page component displays the current location and
+// a 12‑hour temperature forecast. It uses the `City` component
+// for the current weather and constructs a small list of
+// upcoming hourly temperatures from the `weatherData` prop.
+// If data isn't yet available it shows a loading indicator.
 import City from '../components/City';
 import Wrapper from '../components/Wrapper';
 
